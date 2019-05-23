@@ -4,11 +4,27 @@ var calculado = false;
 
 
 
+function escreverNaTela(parcela,numero01, numero02) {
+    let node = document.createElement("li");
+    node.setAttribute("class",  "list-group-item ")
+    let textnode = document.createTextNode(parcela + "\tx \t" + parseFloat(numero01).toFixed(2) +"\tTotal de R$" + parseFloat(numero02).toFixed(2));
+        
+    node.appendChild(textnode);
+    document.getElementById("parcelas").appendChild(node);   
+}
+
 function gerarParcelas(){
 
     var valor = parseFloat(document.getElementById("valor-total")
     .value);
     console.log(valor);
+
+    let valor01 = valor + (valor * jurosPorBoleto);
+    console.log(valor01);
+
+    escreverNaTela(1, valor01,valor01);
+ 
+
     for (let parcela = 2; parcela <= 12; parcela++) {
 
         let valor01 = valor + (valor * jurosPorBoleto);
@@ -29,12 +45,7 @@ function gerarParcelas(){
         let valor06 = valor05 / parcela;
         console.log(valor06);
 
-        let node = document.createElement("li");
-        node.setAttribute("class",  "list-group-item ")
-        let textnode = document.createTextNode(parcela + "\tx \t" + parseFloat(valor06).toFixed(2) +"\tTotal de R$" + parseFloat(valor05).toFixed(2));
-            
-        node.appendChild(textnode);
-        document.getElementById("parcelas").appendChild(node);        
+        escreverNaTela(parcela, valor06, valor05);     
       
     }
 }
