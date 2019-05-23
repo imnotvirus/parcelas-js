@@ -13,6 +13,11 @@ function escreverNaTela(parcela, numero01, numero02) {
 }
 
 function gerarParcelas() {
+  if (calculado) {
+    window.location.reload(true);
+  }
+
+  calculado = true;
   var valor = parseFloat(document.getElementById("valor-total").value);
   console.log(valor);
   var valor01 = valor + valor * jurosPorBoleto;
