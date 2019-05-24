@@ -1,4 +1,4 @@
-# <a href="imnotvirus.github.io"> calculador de parcelas </a> < - - acessa ai para ver como está
+# <a href="http://imnotvirus.github.io"> calculador de parcelas </a> < - - acessa ai para ver como está
 <h2>Calculo de parcelas</h2>
 <p>Simulador de parcela de pagamento de boletos</p>
 <p>Foi utilizado HTML e CSS para contrução do layout, javascript raiz para fazer a logica e manipular as informações</p>
