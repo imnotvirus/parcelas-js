@@ -1,8 +1,3 @@
-var jurosPorBoleto = 0.0299;
-var jurosPorParcela = 0.0349;
-var calculado = false;
-
-
 //desabilita o botão no início
 document.getElementById("botao").disabled = true;
 
