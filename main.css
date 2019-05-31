@@ -44,4 +44,14 @@ body {
 
 .row>input {
   margin-left: 5px;
+  margin-top: 10px;
+}
+
+@media ( max-width: 600px) {
+  body {
+    background-color: #11C76F;
+  }
+  .formulario {
+    width: 80%;
+  }
 }
