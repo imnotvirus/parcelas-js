@@ -38,13 +38,19 @@ function gerarParcelas() {
     window.location.reload(true);
   }
   calculado = true;
+  let juros = parseFloat(document.getElementById("juros").value);
+  juros = juros / 100;
+  let meses = parseFloat(document.getElementById("meses").value);
+  let valor = parseFloat(document.getElementById("valor-total").value);
 
+  let jurosDaCompra = valor * juros * meses;
 
+  let compra = valor + jurosDaCompra;
 
-  escreverNaTela(parcela, valor06, valor05);
+  let parcela = compra / meses;
 
-}
+  escreverNaTela(meses,parcela,compra);
 
-const botao = document.getElementById("botao");
-botao.innerHTML = "resetar";
+  const botao = document.getElementById("botao");
+  botao.innerHTML = "resetar";
 }

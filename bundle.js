@@ -33,29 +33,14 @@ function gerarParcelas() {
   }
 
   calculado = true;
+  var juros = parseFloat(document.getElementById("juros").value);
+  juros = juros / 100;
+  var meses = parseFloat(document.getElementById("meses").value);
   var valor = parseFloat(document.getElementById("valor-total").value);
-  console.log(valor);
-  var valor01 = valor + valor * jurosPorBoleto;
-  console.log(valor01);
-  escreverNaTela(1, valor01, valor01);
-
-  for (var parcela = 2; parcela <= 12; parcela++) {
-    var _valor = valor + valor * jurosPorBoleto;
-
-    console.log(_valor);
-    var valor02 = _valor + _valor * jurosPorParcela;
-    console.log(valor02);
-    var valor03 = valor02 / parcela;
-    console.log(valor03);
-    var valor04 = valor03 * jurosPorParcela;
-    console.log(valor04);
-    var valor05 = valor04 + valor02;
-    console.log(valor05);
-    var valor06 = valor05 / parcela;
-    console.log(valor06);
-    escreverNaTela(parcela, valor06, valor05);
-  }
-
+  var jurosDaCompra = valor * juros * meses;
+  var compra = valor + jurosDaCompra;
+  var parcela = compra / meses;
+  escreverNaTela(meses, parcela, compra);
   var botao = document.getElementById("botao");
   botao.innerHTML = "resetar";
 }
