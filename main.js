@@ -48,5 +48,5 @@ function gerarParcelas() {
   escreverNaTela(meses,parcela,compra);
 
   const botao = document.getElementById("botao");
-  botao.innerHTML = "resetar";
+  botao.innerHTML = "RESETAR";
 }

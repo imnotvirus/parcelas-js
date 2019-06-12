@@ -40,5 +40,5 @@ function gerarParcelas() {
   var parcela = compra / meses;
   escreverNaTela(meses, parcela, compra);
   var botao = document.getElementById("botao");
-  botao.innerHTML = "resetar";
+  botao.innerHTML = "RESETAR";
 }
