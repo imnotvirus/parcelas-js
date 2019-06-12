@@ -1,3 +1,5 @@
+calculado = false;
+
 //desabilita o botão no início
 document.getElementById("botao").disabled = true;
 
@@ -17,35 +19,39 @@ document.getElementById("valor-total").addEventListener("input", function (event
   }
 });
 
+class teste {
 
-function escreverNaTela(parcela, numero01, numero02) {
-  let node = document.createElement("li");
-  node.setAttribute("class", "list-group-item ");
-  let textnode = document.createTextNode(parcela + "\tx \t" + parseFloat(numero01).toFixed(2) + "\tTotal de R$" + parseFloat(numero02).toFixed(2));
+  escreverNaTela(parcela, numero01, numero02) {
+    let node = document.createElement("li");
+    node.setAttribute("class", "list-group-item ");
+    let textnode = document.createTextNode(parcela + "\tx \t" + parseFloat(numero01).toFixed(2) + "\tTotal de R$" + parseFloat(numero02).toFixed(2));
 
-  node.appendChild(textnode);
-  document.getElementById("parcelas").appendChild(node);
-}
-
-function gerarParcelas() {
-
-  if (calculado) {
-    window.location.reload(true);
+    node.appendChild(textnode);
+    document.getElementById("parcelas").appendChild(node);
   }
-  calculado = true;
-  let juros = parseFloat(document.getElementById("juros").value);
-  juros = juros / 100;
-  let meses = parseFloat(document.getElementById("meses").value);
-  let valor = parseFloat(document.getElementById("valor-total").value);
 
-  let jurosDaCompra = valor * juros * meses;
+  gerarParcelas() {
 
-  let compra = valor + jurosDaCompra;
+    if (calculado)  window.location.reload(true);
+    
+    calculado = true;
+    
+    let juros = parseFloat(document.getElementById("juros").value);
+    let meses = parseFloat(document.getElementById("meses").value);
+    let valor = parseFloat(document.getElementById("valor-total").value);
+    
+    juros = juros / 100;
+    
 
-  let parcela = compra / meses;
+    let jurosDaCompra = valor * juros * meses;
 
-  escreverNaTela(meses,parcela,compra);
+    let compra = valor + jurosDaCompra;
 
-  const botao = document.getElementById("botao");
-  botao.innerHTML = "resetar";
+    let parcela = compra / meses;
+
+    escreverNaTela(meses, parcela, compra);
+
+    const botao = document.getElementById("botao");
+    botao.innerHTML = "resetar";
+  }
 }
