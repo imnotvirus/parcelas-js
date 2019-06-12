@@ -1,6 +1,7 @@
 "use strict";
 
-//desabilita o botão no início
+var calculado = false; //desabilita o botão no início
+
 document.getElementById("botao").disabled = true; //cria um event listener que escuta mudanças no input
 
 document.getElementById("valor-total").addEventListener("input", function (event) {
